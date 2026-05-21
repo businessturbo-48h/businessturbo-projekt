@@ -5,76 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BusinessTurbo-48h.de</title>
     <style>
-        :root {
-            --cyan: #00BFFF; /* Power Cyan-Blau */
-            --silver: #C0C0C0; /* Edles Silber */
-            --bg: #F0F2F5; /* Edles Lichtgrau */
-            --text-dark: #1A1A1A;
-            --white: #FFFFFF;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text-dark); line-height: 1.6; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; margin-bottom: 40px; }
-        header h1 { font-size: 2.5rem; color: var(--silver); text-transform: uppercase; letter-spacing: 2px; }
-        .hero {
-            background-color: var(--white);
-            border: 8px solid var(--cyan); /* Fetter, geiler Rahmen */
-            border-radius: 25px;
-            padding: 50px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .rocket { font-size: 7rem; display: inline-block; color: var(--silver); animation: move 2s infinite ease-in-out; }
-        @keyframes move { 0% { transform: rotate(45deg) translate(0,0); } 50% { transform: rotate(45deg) translate(20px, -20px); } 100% { transform: rotate(45deg) translate(0,0); } }
-        .hero-text { font-size: 3.5rem; font-weight: 900; color: var(--silver); text-transform: uppercase; margin: 20px 0; }
-        .hero-sub { font-size: 1.6rem; color: var(--cyan); font-weight: bold; margin-bottom: 30px; }
-        .btn-run {
-            display: inline-block;
-            background-color: var(--cyan);
-            color: var(--white);
-            padding: 20px 40px;
-            font-size: 1.5rem;
-            border: 3px solid var(--silver);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .section { margin-top: 60px; }
-        .section h2 { text-align: center; color: var(--cyan); margin-bottom: 30px; }
-        .faq { list-style: none; }
-        .faq li {
-            background-color: var(--secondary, #2C3E50); /* Edler dunkler Hintergrund für Kontrast */
-            color: var(--white);
-            margin-bottom: 15px;
-            padding: 25px;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            border-left: 5px solid var(--cyan);
-        }
-        footer { margin-top: 60px; text-align: center; color: var(--silver); }
+        :root { --cyan: #00BFFF; --silver: #C0C0C0; --bg: #1A1A1A; --text: #FFFFFF; }
+        body { font-family: sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; }
+        .hero { border: 8px solid var(--cyan); padding: 50px; border-radius: 30px; text-align: center; }
+        .rocket { font-size: 80px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        h1 { color: var(--silver); text-transform: uppercase; font-size: 3rem; }
+        .btn { display: inline-block; background: var(--cyan); color: white; padding: 20px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 30px; cursor: pointer; border: none; }
+        .lab-section { margin-top: 50px; background: #2C3E50; padding: 30px; border-radius: 20px; }
+        #data-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        input { padding: 15px; border-radius: 10px; border: none; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header><h1>BusinessTurbo-48h.de</h1></header>
         <section class="hero">
             <div class="rocket">🚀</div>
-            <div class="hero-text">NIX BLA-BLA!<br>ZACK-ZACK!<br>YALLAH-YALLAH!</div>
-            <p class="hero-sub">Sie haben eine Business-Idee, dann ...</p>
-            <a href="#" class="btn-run">READY TO RUN</a>
+            <h1>BUSINESS TURBO 48H</h1>
+            <p>Es ist das Versprechen auf eine Begegnung der Superlative.</p>
+            <button class="btn" onclick="document.getElementById('lab-section').scrollIntoView()">DABEI SEIN</button>
         </section>
-        <section class="section">
-            <h2>Häufig gestellte Fragen (FAQ)</h2>
-            <ul class="faq">
-                <li>Was ist das Ready-to-Run-Paket?</li>
-                <li>Für wen ist das Paket geeignet?</li>
-                <li>Wie läuft die gemeinsame Vorbereitung der Zahlen ab?</li>
-            </ul>
+        <section id="lab-section" class="lab-section">
+            <h2>IT-Forensik & Data Recovery Lab</h2>
+            <form id="data-form">
+                <input type="text" placeholder="Dein Name" required>
+                <input type="email" placeholder="E-Mail" required>
+                <input type="text" placeholder="Daten-Analyse Ziel" required>
+                <button type="submit" class="btn">Jetzt Daten eingeben & Sichern</button>
+            </form>
         </section>
-        <footer>&copy; 2026 BusinessTurbo-48h.de</footer>
     </div>
 </body>
 </html>
